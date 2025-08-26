@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">   
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#4A90E2">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - Rodrigo Media</title>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-949BCHGME4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-949BCHGME4');
+</script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e0e0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #000;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 100px;
+            min-height: calc(100vh - 100px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .container.about-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+
+        .about-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .about-text .highlight {
+            color: #4A90E2;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-section {
+            background: #fafafa;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #000;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #4A90E2;
+        }
+
+        .skill-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .skill-item p {
+            color: #666;
+        }
+
+        /* Liga-te Project Section */
+        .liga-te-section {
+            padding: 4rem 0;
+        }
+
+        .liga-te-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .liga-te-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 1.5rem;
+        }
+
+        .liga-te-text .highlight {
+            color: #4A90E2;
+        }
+
+        .liga-te-text p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .liga-te-image {
+            text-align: center;
+        }
+
+        .liga-te-image img {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-section {
+            background: #4A90E2;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: white;
+            color: #4A90E2;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #4A90E2;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container.about-hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .about-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .liga-te-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .liga-te-text h2 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">RODRIGO MEDIA</a>
+        <div>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Mim</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container about-hero">
+        <div class="about-text">
+            <h1>Olá, sou o <span class="highlight">Rodrigo</span></h1>
+            <p>Web designer apaixonado por criar experiências digitais únicas e funcionais, combinando criatividade com conhecimento técnico em UI/UX, desenvolvimento web e design responsivo para entregar soluções personalizadas e eficazes aos clientes.</p>
+            <p>Há vários anos que me dedico a ajudar empresas e profissionais a estabelecer uma presença online forte e memorável.</p>
+            <p>Acredito que cada projeto é uma oportunidade de contar uma história através do design.</p>
+        </div>
+        <div class="about-image">
+            <img src="images/perfil.jpg" alt="Rodrigo Pinto">
+        </div>
+    </div>
+
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">As minhas competências</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Design UI/UX</h3>
+                    <p>Criação de interfaces intuitivas e experiências de utilizador envolventes.</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💻</div>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>HTML, CSS, JavaScript para sites rápidos e responsivos.</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📱</div>
+                    <h3>Design Responsivo</h3>
+                    <p>Sites que funcionam perfeitamente em todos os dispositivos.</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🚀</div>
+                    <h3>Otimização SEO</h3>
+                    <p>Técnicas para melhorar a visibilidade nos motores de busca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="liga-te-section">
+        <div class="container">
+            <div class="liga-te-content">
+                <div class="liga-te-text">
+                    <h2>O meu projeto <span class="highlight">Liga-te</span></h2>
+                    <p>O projeto Liga-te nasceu da minha vontade de ajudar pessoas e pequenos negócios a terem uma presença online simples, rápida e acessível. Acredito que qualquer ideia merece estar na internet de forma profissional, sem complicações nem custos escondidos.</p>
+                    <p>Para mim, criar websites não é só escrever código: é transformar ideias em algo real e útil. Com 15 anos, cada projeto é também uma forma de aprender e de crescer, sempre a pensar em entregar qualidade.</p>
+                </div>
+                <div class="liga-te-image">
+                    <img src="images/camera.jpg" alt="Rodrigo Pinto - Liga-te Project">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Pronto para trabalharmos juntos?</h2>
+            <p>Vamos criar algo incrível para o teu negócio!</p>
+            <a href="index.html#contacto" class="cta-button">Entrar em Contacto</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Rodrigo Pinto. Todos os direitos reservados. | <a href="index.html">Voltar ao início</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
